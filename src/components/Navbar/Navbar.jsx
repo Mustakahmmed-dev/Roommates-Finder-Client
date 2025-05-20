@@ -23,10 +23,10 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div>
-                        <a className="flex gap-2 items-center">
+                        <Link to="/" className="flex gap-2 items-center">
                             <img className="md:w-[80px] h-[80px] rounded" src={logo} alt="FindMate Logo" />
                             <h2 className="text-xl font-bold text-cyan-500">FindMates</h2>
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -34,8 +34,9 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <button><Link to="/login">Login</Link></button>
+                <div className="navbar-end space-x-3">
+                    <button className="btn btn-neutral"><Link to="/login">Login</Link></button>
+                    <button className="btn btn-neutral"><Link to="/register">Sign Up</Link></button>
                 </div>
             </div>
     )
