@@ -1,12 +1,12 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import logo from '/FindMate.png';
 
 const Navbar = () => {
     const links = <>
-        <li><NavLink>Home</NavLink></li>
-        <li><NavLink>Add to Find Roommate</NavLink></li>
-        <li><NavLink>Browse Listings</NavLink></li>
-        <li><NavLink>My Listings</NavLink></li>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/add-to-find-roommate">Add to Find Roommate</NavLink></li>
+        <li><NavLink to="/browse-listings">Browse Listings</NavLink></li>
+        <li><NavLink to="/my-listings">My Listings</NavLink></li>
     </>
 
     return (
@@ -23,8 +23,9 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div>
-                        <a className="">
-                            <img className="w-[80px] md:w-[100px]" src={logo} alt="FindMate Logo" />
+                        <a className="flex gap-2 items-center">
+                            <img className="md:w-[80px] h-[80px] rounded" src={logo} alt="FindMate Logo" />
+                            <h2 className="text-xl font-bold text-cyan-500">FindMates</h2>
                         </a>
                     </div>
                 </div>
@@ -34,7 +35,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button>Login</button>
+                    <button><Link to="/login">Login</Link></button>
                 </div>
             </div>
     )

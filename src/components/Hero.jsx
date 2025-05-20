@@ -1,0 +1,93 @@
+//Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+//Required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
+
+//Swiper styles
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+
+const Hero = () => {
+    return (
+        <div className="flex flex-col-reverse md:flex-row gap-4 h-[80vh] ">
+            <div className="p-5 text-center flex flex-col justify-center items-center gap-3">
+                <h2 className="text-2xl font-bold text-gray-800">Find the Perfect Roommates, Anytime, Anywhere</h2>
+                <p className="text-gray-700">Whether you're moving to a new city or just want someone who matches your lifestyle, FindMates helps you connect with verified, like-minded roommates — safely and effortlessly.
+                    You can also share your room space with those looking for a room rent.
+
+                </p>
+                <div className="flex gap-3 mt-6">
+                    <button className="btn btn-info">Browse Listings </button>
+                    <button className="btn btn-outline btn-info">Add to Find Roommates</button>
+                </div>
+            </div>
+
+            <Swiper
+                modules={[Autoplay, Pagination, Navigation]}
+                spaceBetween={30}
+                loop={true}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }}
+                pagination={{ clickable: true }}
+                navigation={true}
+                className="w-full h-[500px]"
+            >
+                <SwiperSlide>
+                    <img
+                        src="https://i.ibb.co/h1LQhj4W/pexels-charles-parker-5845536.jpg"
+                        className="w-full h-full object-cover"
+                        alt="Slide 1"
+                    />
+                    <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-start p-8 text-white ">
+                        <h2 className="text-2xl md:text-4xl font-bold my-4">FindMates, Where Trust Begins</h2>
+                        <p className="text-lg md:text-xl max-w-xl mb-6">
+                            Discover genuine people and real connections. Join a platform built for trust, growth, and meaningful partnerships.
+                        </p>
+                        <button className="bg-white text-black px-6 py-2 rounded hover:bg-gray-200 font-semibold">
+                            Get Started
+                        </button>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img
+                        src="https://i.ibb.co/Kj9tSWQf/pexels-heyho-6207951.jpg"
+                        className="w-full h-full object-cover"
+                        alt="Slide 2"
+                    />
+                     <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-start p-8 text-white ">
+                        <h2 className="text-2xl md:text-4xl font-bold my-4">FindMates, Where Trust Begins</h2>
+                        <p className="text-lg md:text-xl max-w-xl mb-6">
+                            Discover genuine people and real connections. Join a platform built for trust, growth, and meaningful partnerships.
+                        </p>
+                        <button className="bg-white text-black px-6 py-2 rounded hover:bg-gray-200 font-semibold">
+                            Get Started
+                        </button>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img
+                        src="https://i.ibb.co/k2MWbfwW/pexels-charles-parker-5845547.jpg"
+                        className="w-full h-full object-cover"
+                        alt="Slide 3"
+                    />
+                     <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-start p-8 text-white ">
+                        <h2 className="text-2xl md:text-4xl font-bold my-4">FindMates, Where Trust Begins</h2>
+                        <p className="text-lg md:text-xl max-w-xl mb-6">
+                            Discover genuine people and real connections. Join a platform built for trust, growth, and meaningful partnerships.
+                        </p>
+                        <button className="bg-white text-black px-6 py-2 rounded hover:bg-gray-200 font-semibold">
+                            Get Started
+                        </button>
+                    </div>
+                </SwiperSlide>
+            </Swiper>
+
+        </div>
+    )
+}
+
+export default Hero;
