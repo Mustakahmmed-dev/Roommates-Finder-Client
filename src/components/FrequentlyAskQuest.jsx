@@ -3,7 +3,7 @@ const FrequentlyAskQuest = () => {
     return (
         <div className="w-10/12 mx-auto">
             <div>
-                <h2 className="text-3xl font-bold text-center my-5">Frequently Asked Questions</h2>
+                <h2 className="text-3xl font-bold text-center text-cyan-500 my-5">Frequently Asked Questions</h2>
             </div>
             <div className="collapse collapse-arrow bg-base-100 border border-base-300">
                 <input type="radio" name="my-accordion-2" defaultChecked />

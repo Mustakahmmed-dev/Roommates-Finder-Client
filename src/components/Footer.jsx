@@ -30,8 +30,8 @@ const Footer = () => {
                 </nav>
 
                 <nav>
-                    <h6 className="footer-title">Connect Umustakahmmed793/s With</h6>
-                    <div className="flex gap-3">mustakahmmed793/
+                    <h6 className="footer-title">Connect Us With</h6>
+                    <div className="flex gap-3">
                         <a href="https://www.facebook.com/mustakahmmed793/" target="_blank" className="link link-hover"> <FaFacebook size={25} /> </a>
                         <a href="https://www.linkedin.com/in/mustakahmmed/" target="_blank" className="link link-hover"> <FaLinkedin size={25} /> </a>
                         <a href="https://www.github.com/mustakahmmed-dev/" target="_blank" className="link link-hover"> <FaGithub size={25} /> </a>

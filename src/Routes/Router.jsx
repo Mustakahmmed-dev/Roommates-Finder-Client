@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import ErrorPage from "../pages/ErrorPage";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import Loader from "../components/Loader";
 
 
 export const Router = createBrowserRouter([
@@ -9,6 +12,7 @@ export const Router = createBrowserRouter([
         path: "/",
         element: <MainLayout></MainLayout>,
         errorElement: <ErrorPage></ErrorPage>,
+        fallbackElement: <Loader></Loader>,
         children: [
             {
                 index: true,
@@ -16,11 +20,11 @@ export const Router = createBrowserRouter([
             },
             {
                 path: "register",
-                element: <div>Register your account</div>
+                element: <Register></Register>
             },
             {
                 path: "login",
-                element: <div> Login into your account</div>
+                element: <Login></Login>
             }
         ]
     },
