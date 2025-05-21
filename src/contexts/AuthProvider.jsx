@@ -6,7 +6,9 @@ import { toast } from "react-toastify"
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
-    console.log(user)
+    const [loading, setLoading] = useState(true);
+
+    console.log(loading, user)
 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
@@ -35,6 +37,7 @@ const AuthProvider = ({children}) => {
     useEffect(() => {
         const loggedUser = onAuthStateChanged(auth, (currentUser) =>{
             setUser(currentUser);
+            setLoading(false);
         });
         return () => {
             loggedUser();
@@ -48,7 +51,9 @@ const AuthProvider = ({children}) => {
         updateUser,
         signInUser,
         logOutUser,
-        handleGoogleLogin
+        handleGoogleLogin,
+        loading,
+        setLoading
     }
 
     return <AuthContext value={userInfo}>

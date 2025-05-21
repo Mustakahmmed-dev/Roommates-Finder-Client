@@ -4,7 +4,7 @@
 
 ## Private Repository:
 
-- client side=> https://classroom.github.com/a/BZcrIhwn
+- client side=> https://github.com/Programming-Hero-Web-Course4/b11a10-client-side-Mustakahmmed-dev.git
 
 - Server side=> https://classroom.github.com/a/3MLCvCKl
 
