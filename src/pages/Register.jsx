@@ -1,12 +1,13 @@
 import { use, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../contexts/AuthContext";
 import { toast } from "react-toastify";
 
 const Register = () => {
     const { createUser, setUser, updateUser, handleGoogleLogin } = use(AuthContext);
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -39,6 +40,17 @@ const Register = () => {
             })
     }
 
+    const handleGoogleLoginBtn = () => {
+        handleGoogleLogin()
+        .then(result => {
+            navigate("/");
+            toast.success("Operation successful!")
+        }).catch(err => {
+            toast.error(err.message);
+        })
+
+    }
+
     return (
         <div className="min-h-[60vh] flex justify-center items-center my-3">
             <div className="card bg-base-100 w-full max-w-sm not-first:shrink-0 shadow-2xl">
@@ -59,7 +71,7 @@ const Register = () => {
                     </form>
                     <p className="text-red-500 font-semibold"> {error && error} </p>
                     <p className="text-center">Or</p>
-                    <button onClick={handleGoogleLogin} className="flex items-center btn bg-white text-[20px]"> <span className="text-cyan-500">Continue With</span> <FaGoogle size={30} />oogle </button>
+                    <button onClick={handleGoogleLoginBtn} className="flex items-center btn bg-white text-[20px]"> <span className="text-cyan-500">Continue With</span> <FaGoogle size={30} />oogle </button>
                     <div className="text-gray-600 font-normal my-4">
                         <p>Already have an account? <Link to="/Login" className="text-blue-500 font-bold underline">Login</Link> </p>
                     </div>

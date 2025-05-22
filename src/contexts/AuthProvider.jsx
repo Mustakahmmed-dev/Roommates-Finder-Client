@@ -4,38 +4,38 @@ import { auth } from "../firebase/firebase.config"
 import { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 
-const AuthProvider = ({children}) => {
+
+const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
     console.log(loading, user)
 
     const createUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     };
     const updateUser = (updatedUser) => {
+        setLoading(true);
         return updateProfile(auth.currentUser, updatedUser);
     };
     const signInUser = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
     const logOutUser = () => {
+        setLoading(true);
         return signOut(auth);
     }
 
     const provider = new GoogleAuthProvider();
-
-    const handleGoogleLogin = () => {
-        signInWithPopup(auth, provider)
-        .then(result => {
-        toast.success("Login successful!")
-        }).catch(error => {
-            toast.error(error.message)
-        })
-    }
     
+    const handleGoogleLogin = () => {
+        return signInWithPopup(auth, provider)
+    }
+
     useEffect(() => {
-        const loggedUser = onAuthStateChanged(auth, (currentUser) =>{
+        const loggedUser = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             setLoading(false);
         });
