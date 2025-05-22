@@ -46,9 +46,9 @@ const AddPost = () => {
 
                 <select name="roomType" className="select select-bordered w-full" required>
                     <option value="">Select Room Type</option>
-                    <option value="Single">Single</option>
-                    <option value="Shared">Shared</option>
-                    <option value="Private">Private</option>
+                    <option value="single">Single</option>
+                    <option value="shared">Shared</option>
+                    <option value="private">Private</option>
                 </select>
 
                 <input type="text" name="preferences" placeholder="Lifestyle Preferences (Pets, Smoking, Night Owl, etc.)" className="input input-bordered w-full" />
@@ -58,8 +58,8 @@ const AddPost = () => {
                 <input type="text" name="contact" placeholder="Contact Info" className="input input-bordered w-full" required />
 
                 <select name="availability" className="select select-bordered w-full" required>
-                    <option value="Available">Available</option>
-                    <option value="Not Available">Not Available</option>
+                    <option value="available">Available</option>
+                    <option value="not available">Not Available</option>
                 </select>
 
                 <input type="email" name="email" value={`${user.email && user.email}`} readOnly className="input input-bordered w-full bg-gray-100 cursor-not-allowed" />

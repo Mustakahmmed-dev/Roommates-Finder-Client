@@ -7,6 +7,7 @@ import Register from "../pages/Register";
 import Loader from "../components/Loader";
 import AddPost from "../pages/AddPost";
 import PrivateRoute from "./PrivateRoute";
+import BrowseListings from "../pages/BrowseListings";
 
 
 export const Router = createBrowserRouter([
@@ -18,7 +19,6 @@ export const Router = createBrowserRouter([
         children: [
             {
                 index: true,
-                loader: () => fetch('http://localhost:3000/posts'),
                 element: <Home></Home>
             },
             {
@@ -33,6 +33,12 @@ export const Router = createBrowserRouter([
                 path: "add-to-find-roommate",
                 element: <PrivateRoute>
                     <AddPost></AddPost>
+                </PrivateRoute>
+            },
+            {
+                path: "browse-listings",
+                element: <PrivateRoute>
+                    <BrowseListings></BrowseListings>
                 </PrivateRoute>
             }
         ]
