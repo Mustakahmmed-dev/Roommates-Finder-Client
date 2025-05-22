@@ -6,8 +6,7 @@
 
 - client side=> https://github.com/Programming-Hero-Web-Course4/b11a10-client-side-Mustakahmmed-dev.git
 
-- Server side=> https://classroom.github.com/a/3MLCvCKl
-
+- Server side=> https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-Mustakahmmed-dev/
 
 ## Action Plans
 - Install, Initialize and setup the site

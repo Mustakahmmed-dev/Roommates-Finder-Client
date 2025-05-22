@@ -1,5 +1,35 @@
+import { use } from "react";
+import { toast } from "react-toastify";
+import { AuthContext } from "../contexts/AuthContext";
 
 const AddPost = () => {
+    const {user } = use(AuthContext);
+
+    const handleAddPost = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const formInputData = new FormData(form);
+        const postingData = Object.fromEntries(formInputData.entries());
+        console.log(postingData);
+
+        // Send data to server/DB
+        fetch('http://localhost:3000/posts',{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(postingData)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                toast.success('Post successful');
+                console.log("after adding to db", data)
+                form.reset();
+            }
+        })
+
+    }
     return (
         <div className="max-w-3xl mx-auto bg-white shadow-md rounded px-8 py-6">
             <div>
@@ -7,7 +37,7 @@ const AddPost = () => {
             <p className="mb-6 text-gray-700">If you are looking for roommates to share your room space with like minded mates that you are looking then share your maximum details to impress the audiences.
             </p>
             </div>
-            <form className="space-y-4">
+            <form onSubmit={handleAddPost} className="space-y-4">
                 <input type="text" name="title" placeholder="Title (e.g., Looking for a roommate in NYC)" className="input input-bordered w-full" required />
 
                 <input type="text" name="location" placeholder="Location" className="input input-bordered w-full" required />
@@ -32,11 +62,11 @@ const AddPost = () => {
                     <option value="Not Available">Not Available</option>
                 </select>
 
-                <input type="email" name="email" value="user@example.com" readOnly className="input input-bordered w-full bg-gray-100 cursor-not-allowed" />
+                <input type="email" name="email" value={`${user.email && user.email}`} readOnly className="input input-bordered w-full bg-gray-100 cursor-not-allowed" />
 
-                <input type="text" name="name" value="John Doe" readOnly className="input input-bordered w-full bg-gray-100 cursor-not-allowed" />
+                <input type="text" name="name" value={`${user.displayName && user.displayName}`} readOnly className="input input-bordered w-full bg-gray-100 cursor-not-allowed" />
 
-                <button type="submit" className="btn bg-info w-full">Add Listing</button>
+                <button type="submit" className="btn bg-info w-full">Publish Post</button>
             </form>
         </div>
 
