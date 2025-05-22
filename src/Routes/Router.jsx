@@ -18,6 +18,7 @@ export const Router = createBrowserRouter([
         children: [
             {
                 index: true,
+                loader: () => fetch('http://localhost:3000/posts'),
                 element: <Home></Home>
             },
             {
