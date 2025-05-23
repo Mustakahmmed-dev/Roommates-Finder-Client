@@ -1,16 +1,19 @@
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, use, useEffect, useState } from "react";
 import BrowseListingCard from "../components/BrowseListingCard";
 import Loader from "../components/Loader";
+import { AuthContext } from "../contexts/AuthContext";
 
 const BrowseListings = () => {
+    const {setLoading} = use(AuthContext);
 
     const [allPosts, setAllPosts] = useState([]);
-    // console.log(allPosts);
+    
 
     useEffect(() => {
         fetch('http://localhost:3000/posts')
             .then(res => res.json())
             .then(data => setAllPosts(data))
+            setLoading(false)
 
     }, [])
 

@@ -48,7 +48,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end space-x-3">
                 {user ? <>
-                <img className="w-14 rounded-full" src={user?.photoURL} alt="Profile photo" title={user?.displayName} />
+                <img className="w-14 rounded-full outline-3 outline-accent" src={user?.photoURL} alt="Profile photo" title={user?.displayName} />
                 <button onClick={handleLogOut} className="btn btn-neutral"><Link>Log Out</Link></button> 
                 </>
                     :

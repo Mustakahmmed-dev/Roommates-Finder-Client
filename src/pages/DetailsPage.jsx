@@ -1,6 +1,7 @@
 import { use } from "react";
 import { useLoaderData, useParams } from "react-router";
 import { AuthContext } from "../contexts/AuthContext";
+import { AiOutlineLike } from "react-icons/ai";
 
 const DetailsPage = () => {
     const { user } = use(AuthContext);
@@ -37,8 +38,9 @@ const DetailsPage = () => {
                 </div>
                 <div className="leading-10">
                     <p>Contact Details: <span className="font-semibold text-gray-800">{contact}</span> </p>
-                    <span>Or</span> <br />
-                    <a className="btn btn-block bg-cyan-500 text-white" href={`mailto: ${email}`}>Send mail</a>
+
+                    <a className="btn bg-cyan-500 text-white" href={`mailto: ${email}`}>Send mail</a>
+                    <button className="btn ml-5 bg-cyan-500 text-white">Like<AiOutlineLike size={20}/> </button>
                 </div>
             </div>
         </div>

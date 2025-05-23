@@ -7,7 +7,7 @@ import MyListingsCard from "../components/MyListingsCard";
 import Loader from "../components/Loader";
 
 const MyListings = () => {
-    const { user } = use(AuthContext);
+    const { user, setLoading } = use(AuthContext);
     const [listedPosts, setListedPosts] = useState([]);
     const userEmail = user && user.email;
     
@@ -17,6 +17,7 @@ const MyListings = () => {
         fetch('http://localhost:3000/posts')
             .then(res => res.json())
             .then(data => setListedPosts(data))
+            setLoading(false);
     }, [])
 
     return (
