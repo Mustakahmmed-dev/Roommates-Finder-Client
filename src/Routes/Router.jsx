@@ -9,6 +9,7 @@ import AddPost from "../pages/AddPost";
 import PrivateRoute from "./PrivateRoute";
 import BrowseListings from "../pages/BrowseListings";
 import MyListings from "../pages/MyListings";
+import DetailsPage from "../pages/DetailsPage";
 
 
 export const Router = createBrowserRouter([
@@ -47,6 +48,14 @@ export const Router = createBrowserRouter([
                 element: <PrivateRoute>
                     <MyListings></MyListings>
                 </PrivateRoute>
+            },
+            {
+                path: "browse-listings/details/:id",
+                loader: () => fetch('http://localhost:3000/posts'),
+                element: <PrivateRoute>
+                    <DetailsPage></DetailsPage>
+                </PrivateRoute>,
+                
             },
 
         ]

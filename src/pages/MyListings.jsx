@@ -20,14 +20,14 @@ const MyListings = () => {
     }, [])
 
     return (
-        <div className="grid grid-cols-5 gap-4 max-w-10/12 mx-auto my-12">
+        <div className="grid grid-cols-6 gap-4 max-w-10/12 mx-auto my-12">
             {/* Profile details */}
-            <section className="md:sticky md:top-0 h-fit col-span-5 md:col-span-2 border-1 border-gray-200 p-5 pb-12 rounded-lg shadow-sm">
+            <section className="md:sticky md:top-0 h-fit col-span-6 md:col-span-2 border-1 border-gray-200 p-5 pb-12 rounded-lg shadow-sm">
                 <MyProfileCard></MyProfileCard>
             </section>
 
             {/* Listing details */}
-            <section className="col-span-5 md:col-span-3 ">
+            <section className="col-span-6 md:col-span-4 ">
                 <h1 className="text-3xl font-bold text-gray-800 text-center mb-4">Your Listings</h1>
                 <div className="flex justify-between my-3">
                     <h2 className="font-semibold text-gray-800">Total: {listedPosts.length} </h2>
@@ -43,6 +43,7 @@ const MyListings = () => {
                                 <th>Title</th>
                                 <th>Location</th>
                                 <th>Room type</th>
+                                <th>Rent</th>
                                 <th colSpan={2}>Actions</th>
                             </tr>
                         </thead>

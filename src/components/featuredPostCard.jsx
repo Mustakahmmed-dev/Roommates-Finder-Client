@@ -1,7 +1,8 @@
 import { Link } from "react-router";
 
 const FeaturedPostCard = ({ post }) => {
-    const { title, rent, location, roomType, availability, name } = post;
+    const {_id, title, rent, location, roomType, availability, name } = post;
+    // console.log(post)
     return (
         <div className="bg-white rounded-2xl shadow-md p-6 space-y-4 hover:shadow-lg transition-all duration-300">
             <div className="space-y-1">
@@ -22,8 +23,8 @@ const FeaturedPostCard = ({ post }) => {
             </div>
 
             <div className="pt-4">
-                <Link className="bg-cyan-500 text-white px-4 py-2 rounded-md hover:bg-cyan-600 transition">
-                    View Details
+                <Link to={`/browse-listings/details/${_id}`} className="bg-cyan-500 text-white px-4 py-2 rounded-md hover:bg-cyan-600 transition">
+                    See More
                 </Link>
             </div>
         </div>
