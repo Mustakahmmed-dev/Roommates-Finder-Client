@@ -10,7 +10,7 @@ const FeaturedPostCard = ({ post }) => {
             </div>
 
             <div className="grid grid-cols-2 gap-4 text-sm text-gray-700">
-                <p><span className="font-semibold">Rent:</span> ${rent}</p>
+                <p><span className="font-semibold">Rent:</span> BDT{rent}</p>
                 <p><span className="font-semibold">Location:</span> {location}</p>
                 <p><span className="font-semibold">Room Type:</span> {roomType}</p>
                 <p>

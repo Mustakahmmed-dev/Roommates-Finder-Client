@@ -1,6 +1,8 @@
 
 import { Link } from "react-router";
 import FeaturedPostCard from "./featuredPostCard";
+import { Suspense } from "react";
+import Loader from "./Loader";
 
 const FeaturedPosts = ({ filteredPosts }) => {
 
@@ -12,9 +14,11 @@ const FeaturedPosts = ({ filteredPosts }) => {
 
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {
-                    filteredPosts.map(post => <FeaturedPostCard key={post._id} post={post}></FeaturedPostCard>)
-                }
+                <Suspense fallback={<Loader></Loader>}>
+                    {
+                        filteredPosts.map(post => <FeaturedPostCard key={post._id} post={post}></FeaturedPostCard>)
+                    }
+                </Suspense>
             </div>
             <div className="text-center">
                 <Link to="/browse-listings" className="btn btn-neutral">See All Posts</Link>
