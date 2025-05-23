@@ -31,7 +31,7 @@ const MyListings = () => {
             <section className="col-span-6 md:col-span-4 ">
                 <h1 className="text-3xl font-bold text-gray-800 text-center mb-4">Your Listings</h1>
                 <div className="flex justify-between my-3">
-                    <h2 className="font-semibold text-gray-800">Total: {listedPosts.length} </h2>
+                    <h2 className="font-semibold text-gray-800">Total: {filteredPosts.length} </h2>
                     <div className="flex gap-2">
                         <input type="text" placeholder="Search here" className="input" />
                         <button className="btn btn-info" type="submit">Search</button>
@@ -45,13 +45,13 @@ const MyListings = () => {
                                 <th>Location</th>
                                 <th>Room type</th>
                                 <th>Rent</th>
-                                <th colSpan={2}>Actions</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <Suspense fallback={<Loader></Loader>}>
                                 {
-                                    filteredPosts.map(post => <MyListingsCard key={post._id} post={post}></MyListingsCard>)
+                                    filteredPosts.map(post => <MyListingsCard key={post._id} post={post} listedPosts={listedPosts} setListedPosts={setListedPosts}></MyListingsCard>)
                                 }
                             </Suspense>
                         </tbody>
