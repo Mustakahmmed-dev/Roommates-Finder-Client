@@ -8,6 +8,7 @@ import Loader from "../components/Loader";
 import AddPost from "../pages/AddPost";
 import PrivateRoute from "./PrivateRoute";
 import BrowseListings from "../pages/BrowseListings";
+import MyListings from "../pages/MyListings";
 
 
 export const Router = createBrowserRouter([
@@ -40,7 +41,14 @@ export const Router = createBrowserRouter([
                 element: <PrivateRoute>
                     <BrowseListings></BrowseListings>
                 </PrivateRoute>
-            }
+            },
+            {
+                path: "my-listings",
+                element: <PrivateRoute>
+                    <MyListings></MyListings>
+                </PrivateRoute>
+            },
+
         ]
     },
     {
