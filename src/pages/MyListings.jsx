@@ -1,33 +1,62 @@
 
-
-// Name, email, photo, emailVerified,
-
-import { use } from "react";
+import { Suspense, use, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { MdVerified } from "react-icons/md";
+import MyProfileCard from "../components/MyProfileCard";
+import MyListingsCard from "../components/MyListingsCard";
+import Loader from "../components/Loader";
 
 const MyListings = () => {
     const { user } = use(AuthContext);
+    const [listedPosts, setListedPosts] = useState([]);
+    const userEmail = user && user.email;
+    
+    const filteredPosts = listedPosts.filter(post => post.email == userEmail);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/posts')
+            .then(res => res.json())
+            .then(data => setListedPosts(data))
+    }, [])
 
     return (
         <div className="grid grid-cols-5 gap-4 max-w-10/12 mx-auto my-12">
             {/* Profile details */}
-            <section className="col-span-5 md:col-span-2 border-1 border-gray-200 p-4 rounded-lg shadow-sm">
-                <div>
-                    <div className="relative">
-                        <img className="w-[100px] rounded-full" src={`${user?.photoURL}`} alt={`User profile photo of ${user?.displayName}`} />
-                        <span className="absolute top-14 left-21 z-50"> {user?.emailVerified && <MdVerified className="text-blue-600" size={30}/>} </span>
-                    </div>
-                    <div>
-                        <h2 className="text-xl text-gray-500 font-bold mt-4">Personal Info:</h2>
-                        <h3 className=" font-semibold text-gray-800">{user?.displayName} </h3>
-                        <p>{user?.email} </p>
-                    </div>
-                </div>
+            <section className="md:sticky md:top-0 h-fit col-span-5 md:col-span-2 border-1 border-gray-200 p-5 pb-12 rounded-lg shadow-sm">
+                <MyProfileCard></MyProfileCard>
             </section>
 
             {/* Listing details */}
-            <section className="col-span-5 md:col-span-3 border"></section>
+            <section className="col-span-5 md:col-span-3 ">
+                <h1 className="text-3xl font-bold text-gray-800 text-center mb-4">Your Listings</h1>
+                <div className="flex justify-between my-3">
+                    <h2 className="font-semibold text-gray-800">Total: {listedPosts.length} </h2>
+                    <div className="flex gap-2">
+                        <input type="text" placeholder="Search here" className="input" />
+                        <button className="btn btn-info" type="submit">Search</button>
+                    </div>
+                </div>
+                <div className="overflow-x-auto">
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Location</th>
+                                <th>Room type</th>
+                                <th colSpan={2}>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <Suspense fallback={<Loader></Loader>}>
+                                {
+                                    filteredPosts.map(post => <MyListingsCard key={post._id} post={post}></MyListingsCard>)
+                                }
+                            </Suspense>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
         </div>
     )
 }
