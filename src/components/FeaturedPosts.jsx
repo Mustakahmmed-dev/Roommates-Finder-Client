@@ -9,7 +9,7 @@ const FeaturedPosts = ({ filteredPosts }) => {
     return (
         <div className="w-10/12 mx-auto my-10 space-y-8">
             <div className="text-center max-w-[600px] mx-auto my-10">
-                <h1 className="text-3xl font-bold text-gray-800 my-5">Featured Posts</h1>
+                <h1 className="text-4xl font-bold text-cyan-500 my-5">Featured Posts</h1>
                 <p className="text-gray-700 font-normal">Discover available roommate listings tailored to your preferences. Browse through featured posts to find your ideal living companion today. </p>
 
             </div>

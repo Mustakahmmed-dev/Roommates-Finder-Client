@@ -16,7 +16,7 @@ const MyListingsCard = ({ post, listedPosts, setListedPosts }) => {
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
-            console.log(result.isConfirmed)
+            // console.log(result.isConfirmed)
             if (result.isConfirmed) {
             //    Delete operation
                 fetch(`http://localhost:3000/posts/${id}`, {

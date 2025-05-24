@@ -32,7 +32,7 @@ const Register = () => {
                     toast.success("Congrats ", name, "! Your account has been created successfully.")
                     setUser(createdUser)
                 })
-                console.log(result)
+                // console.log(result)
 
 
             }).catch(error => {

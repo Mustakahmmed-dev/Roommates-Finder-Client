@@ -10,7 +10,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    console.log(location);
+    // console.log(location);
 
 
     const handleLogin = (e) => {
@@ -21,7 +21,7 @@ const Login = () => {
         signInUser(email, password)
             .then(result => {
                 toast.success("Welcome back, login successful!")
-                console.log(result)
+                // console.log(result)
                 navigate(`${location.state ? location.state : '/'}`)
             }).catch(err => {
                 toast.error(err.message)

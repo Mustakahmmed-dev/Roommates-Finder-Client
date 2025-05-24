@@ -10,7 +10,7 @@ const AddPost = () => {
         const form = e.target;
         const formInputData = new FormData(form);
         const postingData = Object.fromEntries(formInputData.entries());
-        console.log(postingData);
+        // console.log(postingData);
 
         // Send data to server/DB
         fetch('http://localhost:3000/posts',{
@@ -24,7 +24,7 @@ const AddPost = () => {
         .then(data => {
             if(data.insertedId){
                 toast.success('Post successful');
-                console.log("after adding to db", data)
+                // console.log("after adding to db", data)
                 form.reset();
             }
         })
