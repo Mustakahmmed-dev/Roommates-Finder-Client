@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import BrowseListings from "../pages/BrowseListings";
 import MyListings from "../pages/MyListings";
 import DetailsPage from "../pages/DetailsPage";
+import UpdateDetails from "../pages/UpdateDetails";
 
 
 export const Router = createBrowserRouter([
@@ -55,7 +56,13 @@ export const Router = createBrowserRouter([
                 element: <PrivateRoute>
                     <DetailsPage></DetailsPage>
                 </PrivateRoute>,
-                
+            },
+            {
+                path: "my-listings/updateDetails/:id",
+                loader: ({params}) => fetch(`http://localhost:3000/posts/${params.id}`),
+                element: <PrivateRoute>
+                    <UpdateDetails></UpdateDetails>
+                </PrivateRoute>,
             },
 
         ]

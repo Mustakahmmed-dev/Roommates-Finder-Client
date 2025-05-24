@@ -49,7 +49,7 @@ const MyListingsCard = ({ post, listedPosts, setListedPosts }) => {
             <td>
                 {/* <Link className="btn btn-sm btn-neutral ">Update</Link>  */}
                 <div className="join join-vertical gap-1">
-                    <button className="btn btn-sm btn-neutral join-item">Update</button>
+                    <Link to={`/my-listings/updateDetails/${_id}`} className="btn btn-sm btn-neutral join-item">Update</Link>
                     <button onClick={() => handleDeletePost(_id)} className="btn btn-sm btn-neutral join-item">Delete</button>
                 </div>
             </td>

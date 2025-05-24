@@ -66,7 +66,7 @@ const AddPost = () => {
 
                 <input type="text" name="name" value={`${user.displayName && user.displayName}`} readOnly className="input input-bordered w-full bg-gray-100 cursor-not-allowed" />
 
-                <button type="submit" className="btn bg-info w-full">Publish Post</button>
+                <button type="submit" className="btn text-white bg-info w-full">Publish Post</button>
             </form>
         </div>
 
