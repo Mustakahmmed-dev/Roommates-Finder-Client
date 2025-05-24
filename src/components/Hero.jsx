@@ -9,6 +9,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import { Typewriter } from 'react-simple-typewriter'
+import { Link } from 'react-router'
 
 const Hero = () => {
     return (
@@ -30,8 +31,8 @@ const Hero = () => {
 
                 </p>
                 <div className="flex gap-3 mt-6">
-                    <button className="btn btn-info">Browse Listings </button>
-                    <button className="btn btn-outline btn-info">Add to Find Roommates</button>
+                    <Link to="/browse-listings" className="btn btn-info text-white">Browse Listings </Link>
+                    <Link to="/add-to-find-roommate" className="btn btn-outline hover:text-white btn-info">Add to Find Roommates</Link>
                 </div>
             </div>
 
@@ -54,13 +55,15 @@ const Hero = () => {
                         alt="Slide 1"
                     />
                     <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-start p-8 text-white ">
-                        <h2 className="text-2xl md:text-4xl font-bold my-4">FindMates, Where Trust Begins</h2>
+                        <h2 className="text-2xl md:text-4xl font-bold my-4">
+                            Find Your Perfect Roommate, Stress-Free
+                            </h2>
                         <p className="text-lg md:text-xl max-w-xl mb-6">
-                            Discover genuine people and real connections. Join a platform built for trust, growth, and meaningful partnerships.
+                            Tired of random roommate matches? Our platform helps you find roommates who align with your values, lifestyle, and preferences. Whether you're a student or working professional, find the right person and the right space — effortlessly and securely.
                         </p>
-                        <button className="bg-white text-black px-6 py-2 rounded hover:bg-gray-200 font-semibold">
+                        <a href='#featured-posts' className="bg-white text-black px-6 py-2 rounded hover:bg-gray-200 font-semibold">
                             Get Started
-                        </button>
+                        </a>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -70,13 +73,13 @@ const Hero = () => {
                         alt="Slide 2"
                     />
                     <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-start p-8 text-white ">
-                        <h2 className="text-2xl md:text-4xl font-bold my-4">FindMates, Where Trust Begins</h2>
+                        <h2 className="text-2xl md:text-4xl font-bold my-4">Discover Rooms Tailored to Your Lifestyle</h2>
                         <p className="text-lg md:text-xl max-w-xl mb-6">
-                            Discover genuine people and real connections. Join a platform built for trust, growth, and meaningful partnerships.
+                            Set your location, budget, and room type — we’ll do the rest. With a personalized search experience and verified listings, finding a room that fits your lifestyle has never been easier.
                         </p>
-                        <button className="bg-white text-black px-6 py-2 rounded hover:bg-gray-200 font-semibold">
+                        <a href='#featured-posts' className="bg-white text-black px-6 py-2 rounded hover:bg-gray-200 font-semibold">
                             Get Started
-                        </button>
+                        </a>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -86,13 +89,13 @@ const Hero = () => {
                         alt="Slide 3"
                     />
                     <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-start p-8 text-white ">
-                        <h2 className="text-2xl md:text-4xl font-bold my-4">FindMates, Where Trust Begins</h2>
+                        <h2 className="text-2xl md:text-4xl font-bold my-4">🤝 Safe, Simple & Smart Roommate Matching</h2>
                         <p className="text-lg md:text-xl max-w-xl mb-6">
-                            Discover genuine people and real connections. Join a platform built for trust, growth, and meaningful partnerships.
+                            We prioritize your safety and comfort. Every listing is reviewed and each connection is built on shared preferences.
                         </p>
-                        <button className="bg-white text-black px-6 py-2 rounded hover:bg-gray-200 font-semibold">
+                       <a href='#featured-posts' className="bg-white text-black px-6 py-2 rounded hover:bg-gray-200 font-semibold">
                             Get Started
-                        </button>
+                        </a>
                     </div>
                 </SwiperSlide>
             </Swiper>
