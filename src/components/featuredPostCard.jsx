@@ -23,7 +23,7 @@ const FeaturedPostCard = ({ post }) => {
             </div>
 
             <div className="pt-4">
-                <Link to={`/browse-listings/details/${_id}`} className="bg-cyan-500 text-white px-4 py-2 rounded-md hover:bg-cyan-600 transition">
+                <Link to={`/browse-listings/details/${_id}`} className="btn btn-info btn-outline hover:text-white px-4 py-2 rounded-md transition-all">
                     See More
                 </Link>
             </div>

@@ -6,7 +6,7 @@ import { Pagination, Autoplay } from 'swiper/modules';
 
 const Testimonials = () => {
     return (
-        <div className="max-w-4xl mx-auto px-4 py-10">
+        <div className="max-w-4xl mx-auto px-4 py-10 bg-slate-100 rounded-xl">
             <h2 className="text-3xl font-bold text-center mb-6">What Our Users Say</h2>
 
             <Swiper
@@ -22,7 +22,7 @@ const Testimonials = () => {
                 className="rounded-xl bg-white shadow-lg"
             >
                 <SwiperSlide>
-                    <div className="p-6 text-center">
+                    <div className="p-6 text-center bg-green-200">
                         <p className="text-lg italic mb-4">
                             “FindMates helped me find a roommate within days. The platform is clean,
                             intuitive, and I felt safe connecting with people.”
@@ -32,7 +32,7 @@ const Testimonials = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <div className="p-6 text-center">
+                    <div className="p-6 text-center bg-violet-200">
                         <p className="text-lg italic mb-4">
                             “I posted my spare room and got responses immediately. It’s the easiest way
                             I’ve ever found a reliable flatmate.”
@@ -42,7 +42,7 @@ const Testimonials = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <div className="p-6 text-center">
+                    <div className="p-6 text-center bg-amber-100">
                         <p className="text-lg italic mb-4">
                             “This app made moving to a new city so much less stressful. I found a shared
                             space in my budget quickly!”
@@ -52,7 +52,7 @@ const Testimonials = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <div className="p-6 text-center">
+                    <div className="p-6 text-center bg-red-100">
                         <p className="text-lg italic mb-4">
                             “As someone with an extra room, FindMates gave me a smooth and fast way to
                             find respectful and friendly roommates.”
