@@ -8,13 +8,24 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
+import { Typewriter } from 'react-simple-typewriter'
 
 const Hero = () => {
     return (
         <div className="flex flex-col-reverse md:flex-row gap-4 h-[80vh] ">
             <div className="p-5 text-center flex flex-col justify-center items-center gap-3">
-                <h2 className="text-2xl font-bold text-gray-800">Find the Perfect Roommates, Anytime, Anywhere</h2>
-                <p className="text-gray-700">Whether you're moving to a new city or just want someone who matches your lifestyle, FindMates helps you connect with verified, like-minded roommates — safely and effortlessly.
+                <h2 className="text-2xl md:text-4xl font-bold text-cyan-500 mb-5">
+                    <Typewriter
+                    words={[
+                    'Find the Perfect Roommates, Anytime, Anywhere',
+                    'Your Next Home Starts Here',
+                    'Connect with Like-Minded People'
+                    ]}
+                    loop={0}
+                    
+                    />
+                </h2>
+                <p className="text-gray-700"> Whether you're moving to a new city or just want someone who matches your lifestyle, FindMates helps you connect with verified, like-minded roommates — safely and effortlessly.
                     You can also share your room space with those looking for a room rent.
 
                 </p>
@@ -58,7 +69,7 @@ const Hero = () => {
                         className="w-full h-full object-cover"
                         alt="Slide 2"
                     />
-                     <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-start p-8 text-white ">
+                    <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-start p-8 text-white ">
                         <h2 className="text-2xl md:text-4xl font-bold my-4">FindMates, Where Trust Begins</h2>
                         <p className="text-lg md:text-xl max-w-xl mb-6">
                             Discover genuine people and real connections. Join a platform built for trust, growth, and meaningful partnerships.
@@ -74,7 +85,7 @@ const Hero = () => {
                         className="w-full h-full object-cover"
                         alt="Slide 3"
                     />
-                     <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-start p-8 text-white ">
+                    <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-start p-8 text-white ">
                         <h2 className="text-2xl md:text-4xl font-bold my-4">FindMates, Where Trust Begins</h2>
                         <p className="text-lg md:text-xl max-w-xl mb-6">
                             Discover genuine people and real connections. Join a platform built for trust, growth, and meaningful partnerships.
