@@ -5,6 +5,7 @@ import { MdVerified } from "react-icons/md";
 import MyProfileCard from "../components/MyProfileCard";
 import MyListingsCard from "../components/MyListingsCard";
 import Loader from "../components/Loader";
+const baseURL = import.meta.env.VITE_serverLink;
 
 const MyListings = () => {
     const { user, setLoading } = use(AuthContext);
@@ -14,7 +15,7 @@ const MyListings = () => {
     const filteredPosts = listedPosts.filter(post => post.email == userEmail);
 
     useEffect(() => {
-        fetch('http://localhost:3000/posts')
+        fetch(`${baseURL}/posts`)
             .then(res => res.json())
             .then(data => setListedPosts(data))
             setLoading(false);

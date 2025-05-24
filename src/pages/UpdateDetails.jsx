@@ -1,5 +1,6 @@
 import { useLoaderData, useNavigate } from "react-router";
 import Swal from "sweetalert2";
+const baseURL = import.meta.env.VITE_serverLink;
 
 const UpdateDetails = () => {
     const { _id, title, location, rent, roomType, preferences, description, contact, availability, email, name } = useLoaderData();
@@ -12,7 +13,7 @@ const UpdateDetails = () => {
         const data = Object.fromEntries(formData.entries());
 
         // Send updated docs to the database.
-        fetch(`http://localhost:3000/posts/${_id}`, {
+        fetch(`${baseURL}/posts/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

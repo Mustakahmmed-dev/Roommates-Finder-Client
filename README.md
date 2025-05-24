@@ -1,6 +1,9 @@
 ## Website Details
 - Web Name: FindMates
-- Web Live Links: 
+- Live Links:
+Firebase deployed link: https://findmates-ass-10.web.app
+
+
 
 ## Private Repository:
 

@@ -1,6 +1,9 @@
 import { Link } from "react-router";
 import Swal from "sweetalert2";
 
+const baseURL = import.meta.env.VITE_serverLink;
+
+
 const MyListingsCard = ({ post, listedPosts, setListedPosts }) => {
     const { _id, title, location, rent, roomType } = post;
 
@@ -19,7 +22,7 @@ const MyListingsCard = ({ post, listedPosts, setListedPosts }) => {
             // console.log(result.isConfirmed)
             if (result.isConfirmed) {
             //    Delete operation
-                fetch(`http://localhost:3000/posts/${id}`, {
+                fetch(`${baseURL}/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

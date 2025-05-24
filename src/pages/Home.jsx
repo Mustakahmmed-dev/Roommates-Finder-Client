@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 import IntegritySec from "../components/IntegritySec";
 import Testimonials from "../components/Testimonials";
 import { AuthContext } from "../contexts/AuthContext";
-
+const baseURL = import.meta.env.VITE_serverLink;
 
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
     const filteredPosts = filteredData && filteredData.slice(0, 6);
 
     useEffect(() => {
-        fetch('http://localhost:3000/posts')
+        fetch(`${baseURL}/posts`)
             .then(res => res.json())
             .then(data => setFeaturedPosts(data))
             setLoading(false);

@@ -11,6 +11,7 @@ import BrowseListings from "../pages/BrowseListings";
 import MyListings from "../pages/MyListings";
 import DetailsPage from "../pages/DetailsPage";
 import UpdateDetails from "../pages/UpdateDetails";
+const baseURL = import.meta.env.VITE_serverLink;
 
 
 export const Router = createBrowserRouter([
@@ -52,14 +53,14 @@ export const Router = createBrowserRouter([
             },
             {
                 path: "browse-listings/details/:id",
-                loader: () => fetch('http://localhost:3000/posts'),
+                loader: () => fetch(`${baseURL}/posts`),
                 element: <PrivateRoute>
                     <DetailsPage></DetailsPage>
                 </PrivateRoute>,
             },
             {
                 path: "my-listings/updateDetails/:id",
-                loader: ({params}) => fetch(`http://localhost:3000/posts/${params.id}`),
+                loader: ({params}) => fetch(`${baseURL}/posts/${params.id}`),
                 element: <PrivateRoute>
                     <UpdateDetails></UpdateDetails>
                 </PrivateRoute>,

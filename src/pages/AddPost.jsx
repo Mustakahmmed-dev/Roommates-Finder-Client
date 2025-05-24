@@ -2,6 +2,8 @@ import { use } from "react";
 import { toast } from "react-toastify";
 import { AuthContext } from "../contexts/AuthContext";
 
+const baseURL = import.meta.env.VITE_serverLink;
+
 const AddPost = () => {
     const {user } = use(AuthContext);
 
@@ -13,7 +15,7 @@ const AddPost = () => {
         // console.log(postingData);
 
         // Send data to server/DB
-        fetch('http://localhost:3000/posts',{
+        fetch(`${baseURL}/posts`,{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -2,6 +2,7 @@ import { Suspense, use, useEffect, useState } from "react";
 import BrowseListingCard from "../components/BrowseListingCard";
 import Loader from "../components/Loader";
 import { AuthContext } from "../contexts/AuthContext";
+const baseURL = import.meta.env.VITE_serverLink;
 
 const BrowseListings = () => {
     const {setLoading} = use(AuthContext);
@@ -10,7 +11,7 @@ const BrowseListings = () => {
     
 
     useEffect(() => {
-        fetch('http://localhost:3000/posts')
+        fetch(`${baseURL}/posts`)
             .then(res => res.json())
             .then(data => setAllPosts(data))
             setLoading(false)

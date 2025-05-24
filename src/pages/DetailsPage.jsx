@@ -4,6 +4,7 @@ import { AuthContext } from "../contexts/AuthContext";
 import { AiOutlineLike } from "react-icons/ai";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
+const baseURL = import.meta.env.VITE_serverLink;
 
 const DetailsPage = () => {
     const { user } = use(AuthContext);
@@ -29,7 +30,7 @@ const DetailsPage = () => {
             });
         }
 
-        const res = await fetch(`http://localhost:3000/posts/like/${id}`, {
+        const res = await fetch(`${baseURL}/posts/like/${id}`, {
             method: "PATCH"
         });
 
