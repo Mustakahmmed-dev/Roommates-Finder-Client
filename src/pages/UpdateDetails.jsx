@@ -1,8 +1,9 @@
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
+import Swal from "sweetalert2";
 
 const UpdateDetails = () => {
-    const { title, location, rent, roomType, preferences, description, contact, availability, email, name } = useLoaderData();
-    // console.log(loadedData)
+    const { _id, title, location, rent, roomType, preferences, description, contact, availability, email, name } = useLoaderData();
+    const navigate = useNavigate();
 
     const handleUpdatePostDetails = (e) => {
         e.preventDefault();
@@ -11,6 +12,27 @@ const UpdateDetails = () => {
         const data = Object.fromEntries(formData.entries());
 
         // Send updated docs to the database.
+        fetch(`http://localhost:3000/posts/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Post has been updated successfully!",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    navigate('/my-listings')
+                }
+                // console.log(data)
+            })
 
     }
     return (
