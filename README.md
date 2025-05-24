@@ -1,13 +1,10 @@
 ## Website Details
 - Web Name: FindMates
-- Live Links:
-Firebase deployed link: https://findmates-ass-10.web.app
+- Live Link: https://findmates-ass-10.web.app
 
+- Client side repo: https://github.com/Programming-Hero-Web-Course4/b11a10-client-side-Mustakahmmed-dev.git
 
-## Private Repository:
-- client side=> https://github.com/Programming-Hero-Web-Course4/b11a10-client-side-Mustakahmmed-dev.git
-
-- Server side=> https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-Mustakahmmed-dev/
+- Server side repo: https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-Mustakahmmed-dev/
 
 
 ## Installations
