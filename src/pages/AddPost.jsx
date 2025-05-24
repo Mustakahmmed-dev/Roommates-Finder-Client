@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../contexts/AuthContext";
 
 const baseURL = import.meta.env.VITE_serverLink;
-console.log(baseURL);
 
 const AddPost = () => {
     const {user } = use(AuthContext);
