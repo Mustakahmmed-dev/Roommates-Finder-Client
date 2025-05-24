@@ -23,10 +23,10 @@ const Footer = () => {
                 </nav>
                 <nav>
                     <h6 className="footer-title">Quick Links</h6>
-                    <Link className="link link-hover">My Listings</Link>
-                    <Link className="link link-hover">Browse Listings</Link>
-                    <Link className="link link-hover">Add to Find Roommates </Link>
-                    <Link className="link link-hover">Advertisement</Link>
+                    <Link to="/my-listings" className="link link-hover">My Listings</Link>
+                    <Link to="/browse-listings" className="link link-hover">Browse Listings</Link>
+                    <Link to="/add-to-find-roommate" className="link link-hover">Add to Find Roommates </Link>
+                    <Link to="/advertisement" className="link link-hover">Advertisement</Link>
                 </nav>
 
                 <nav>
