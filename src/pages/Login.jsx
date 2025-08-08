@@ -8,8 +8,8 @@ const Login = () => {
     const { user, setUser, signInUser, handleGoogleLogin } = use(AuthContext);
 
     const location = useLocation();
-    const navigate = useNavigate();
-
+    const navigate = ();
+useNavigate
     // console.log(location);
 
 
