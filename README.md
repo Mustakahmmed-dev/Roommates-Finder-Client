@@ -1,5 +1,5 @@
 # FindMates - Roommate Finding Platform
-
+![Find Mates Banner](./Findmateshome.png)
 ## Project Overview  
 FindMates is a secure roommate posting platform that connects users looking for roommates or rooms. Users can post listings, manage their posts, and contact potential roommates directly through provided details. The app features user authentication and a personalized dashboard for managing listings, built with a full-stack architecture for fast and reliable performance.
 
@@ -37,4 +37,5 @@ FindMates is a secure roommate posting platform that connects users looking for 
 - Like button for user interaction and engagement  
 - Dedicated post detail pages with full listing info  
 - All posts listing page for browsing available rooms and roommates  
-- Fast and scalable full-stack deployment using Firebase and Vercel  
+- Fast and scalable full-stack deployment using Firebase and Vercel
+  ![Find Mates Features](./Findmates_Features.png)
