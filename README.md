@@ -1,48 +1,40 @@
-## Website Details
-- Web Name: FindMates
-- Live Link: https://findmates-ass-10.web.app
+# FindMates - Roommate Finding Platform
 
-- Client side repo: https://github.com/Programming-Hero-Web-Course4/b11a10-client-side-Mustakahmmed-dev.git
+## Project Overview  
+FindMates is a secure roommate posting platform that connects users looking for roommates or rooms. Users can post listings, manage their posts, and contact potential roommates directly through provided details. The app features user authentication and a personalized dashboard for managing listings, built with a full-stack architecture for fast and reliable performance.
 
-- Server side repo: https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-Mustakahmmed-dev/
+## 🔗 Live Project  
+[https://findmates-ass-10.web.app](https://findmates-ass-10.web.app)
 
+## 🛠 Technologies Used  
+### Frontend  
+- React  
+- React Router  
+- TailwindCSS  
+- DaisyUI  
+- React Toastify  
+- React Icons  
+- React Simple Typewriter  
+- Swiper  
+- Lottie  
 
-## Installations
-- React
-- React Router
-- TailwindCSS
-- DaisyUI
-- Firebase
-- React-toastify
-- React icons
-- React Simple Type Writer
-- Swiper
-- Sweetalert2
-- Vercel global
-- Lottie
+### Backend  
+- Node.js  
+- Express.js  
 
+### Database & Auth  
+- Firebase Authentication  
 
-## Features
-- Secure Roommate Posting System <br>
-Users can easily submit new roommate or room listings through a structured form. Each post is securely stored in the backend database, ensuring reliable data handling.
+### Deployment  
+- Frontend hosted on Firebase  
+- Backend hosted on Vercel  
 
-- User Authentication & Authorization <br>
-With Firebase Authentication integrated, users can sign in and manage their own listings. Only logged-in users can create posts, adding a layer of security and accountability.
-
-- My Listings Dashboard <br>
-Each authenticated user has access to a personalized dashboard where they can view, manage, and delete the posts they’ve made — giving full control over their content.
-
-- Contact-Based Roommate Communication <br>
-Each post includes contact details like phone numbers or emails, enabling direct offline communication between interested parties to discuss room availability and terms.
-
-- Deployed Full-Stack Architecture <br>
-The frontend (React/Vite) is hosted on Firebase, while the backend (Node.js/Express) is deployed on Vercel. This separation ensures a clean full-stack setup and faster load times.
-
-- Like Button Interaction <br>
-Users can click a like button on posts, showing interest and allowing others to see how many users are interested in that listing — creating organic engagement.
-
-- Individual Post Detail Page <br>
-Each post links to a dedicated detail page that shows complete information about the room, rent, location, preferences, and contact details for better decision-making.
-
-- All Posts Listing Page <br>
-The platform features an "All Posts" page where users can browse every public listing, helping them discover available rooms and roommates easily.
+## ⭐ Core Features  
+- Secure roommate and room posting system with structured forms  
+- User authentication and authorization with Firebase  
+- Personalized dashboard for managing user posts  
+- Contact details on listings for direct offline communication  
+- Like button for user interaction and engagement  
+- Dedicated post detail pages with full listing info  
+- All posts listing page for browsing available rooms and roommates  
+- Fast and scalable full-stack deployment using Firebase and Vercel  
